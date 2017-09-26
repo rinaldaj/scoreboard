@@ -1,0 +1,4 @@
+<h1> New Metric </h2>
+<%= form_with scope: :metric, local: true, url: metrics_path do |form| %>
+	<p> <%=form.label :name %><br>
+	<%= form.text_field :name %> <%= form.submit %><% end %>

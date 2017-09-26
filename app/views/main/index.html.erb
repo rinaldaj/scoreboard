@@ -1,0 +1,11 @@
+<h1>These are the metrics for cosi</h1>
+<table>
+<% @metrics.each do |metric| %>
+	<tr>
+		<td><%= metric.name%> </td>
+		<td> <%= metric.number %></td>
+		<td> <%= button_to "Increment",{:controller => "metrics",:action => "update",:id => metric.id,:change_by => 1}, :method => "put"  %> </td>
+		<td> <%= button_to "Decrement",{:controller => "metrics",:action => "update",:id => metric.id,:change_by => -1}, :method => "put"  %> </td>
+	</tr>
+<% end %>
+</table>
