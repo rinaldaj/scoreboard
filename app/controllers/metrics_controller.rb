@@ -1,4 +1,5 @@
 class MetricsController < ApplicationController
+	http_basic_authenticate_with name:"kuro", password: "shiro",only: [:destroy,:create]
 	def new
 	end
 
