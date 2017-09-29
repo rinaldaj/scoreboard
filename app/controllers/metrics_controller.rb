@@ -3,6 +3,9 @@ class MetricsController < ApplicationController
 	def new
 	end
 
+	def del
+	end
+
 	def create
 		@metric = Metric.new(get_params)
 		@metric.save
@@ -16,6 +19,12 @@ class MetricsController < ApplicationController
 		tmetric = Metric.find(params[:id])
 		tmetric.number = tmetric.number + params[:change_by].to_i
 		tmetric.save
+		redirect_to '/main/index'
+	end
+
+	def destroy
+		dmetric = Metric.find(params[:id])
+		dmetric.destroy
 		redirect_to '/main/index'
 	end
 

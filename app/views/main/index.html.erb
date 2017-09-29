@@ -6,6 +6,7 @@
 		<td> <%= metric.number %></td>
 		<td> <%= button_to "Increment",{:controller => "metrics",:action => "update",:id => metric.id,:change_by => 1}, :method => "put"  %> </td>
 		<td> <%= button_to "Decrement",{:controller => "metrics",:action => "update",:id => metric.id,:change_by => -1}, :method => "put"  %> </td>
+		<td> <%= button_to "Delete",{:controller => "metrics",:action => "destroy",:id => metric.id}, :method => "delete"  %> </td>
 	</tr>
 <% end %>
 </table>
